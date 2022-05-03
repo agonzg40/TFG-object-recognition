@@ -10,12 +10,12 @@ from torch import hub # Hub contains other models like FasterRCNN
 
 thres = 0.45 # Threshold to detect object
 
-classFile = 'src/prueba-camara/cv_basics/cv_basics/coco.names'
+classFile = 'src/prueba-camara/TFG-object-recognition-main/cv_basics/coco.names'
 with open(classFile,'rt') as f:
   classNames = f.read().rstrip('\n').split('\n')
 
-configPath = 'src/prueba-camara/cv_basics/cv_basics/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
-weightsPath = 'src/prueba-camara/cv_basics/cv_basics/frozen_inference_graph.pb'
+configPath = 'src/prueba-camara/TFG-object-recognition-main/cv_basics/ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
+weightsPath = 'src/prueba-camara/TFG-object-recognition-main/cv_basics/frozen_inference_graph.pb'
 
 net = cv2.dnn_DetectionModel(weightsPath,configPath)
 net.setInputSize(320,320)
